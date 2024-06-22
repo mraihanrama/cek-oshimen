@@ -103,7 +103,7 @@
         <h2>Cari tahu siapa oshi kamu</h2>
         <input type="text" id="namaInput" placeholder="Masukkan nama">
         <br>
-        <button onclick="checkOshi()">Submit</button>
+        
         <div id="loadingContainer">
             <div class="loading" id="loadingSpinner"></div>
             <div id="loadingText">Sedang mengecek oshi kamu...</div>
@@ -112,6 +112,8 @@
             <img src="" alt="" class="photo" id="oshiPhoto">
             <div id="oshiName"></div>
         </div>
+        <button onclick="checkOshi()">Submit</button>
+        <button onclick="goBack()">refresh</button>
     </div>
 
     <script>
@@ -172,6 +174,7 @@
             { name: "Kimmy", photo: "https://static.wikia.nocookie.net/akb48/images/7/70/Victoria_Kimberly_JKT48_2023.jpg/revision/latest/scale-to-width-down/100?cb=20231214054438" }
         ];
 
+
         function generateRandomKhodam() {
             const randomIndex = Math.floor(Math.random() * khodamNames.length);
             return khodamNames[randomIndex];
@@ -197,6 +200,9 @@
                     document.getElementById("loadingContainer").style.display = "none";
                 }, 5000); // 5000 milidetik = 5 detik
             }
+        }
+        function goBack(){
+            window.location.reload()
         }
     </script>
 </body>
